@@ -112,6 +112,7 @@ source venv/bin/activate #Activate venv
 
 pip install -r requirements.txt
 pip list #to check the packages
+pip freeze > requirements.txt #pin your dependencies
 
 
 
@@ -120,3 +121,120 @@ py -3.12 -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+## What is a Python Virtual Environment
+When you create a new virtual environment using the venv module, Python creates a self-contained folder structure and copies or symlinks the Python executable files into that folder structure.
+
+> ***Welcome to the dark abyss, brave one.***
+```shell
+
+$ brew install tree #If tree is not installed
+$ tree venv/ #The tree command displays the content of your venv directory in a very long tree structure.
+
+venv/
+│
+├── bin/
+│   ├── Activate.ps1
+│   ├── activate
+│   ├── activate.csh
+│   ├── activate.fish
+│   ├── pip
+│   ├── pip3
+│   ├── pip3.12
+│   ├── python
+│   ├── python3
+│   └── python3.12
+│
+├── include/
+│
+├── lib/
+│   │
+│   └── python3.12/
+│       │
+│       └── site-packages/
+│           │
+│           ├── pip/
+│           │
+│           └── pip-24.2.dist-info/
+│
+└── pyvenv.cfg
+```
+- **bin/** contains the executable files of your virtual environment. Most notable are the Python interpreter (python) and the pip executable (pip), as well as their respective symlinks (python3, python3.12, pip3, pip3.12). The folder also contains activation scripts for your virtual environment. 
+- **include/** is an initially empty folder that Python uses to include C header files for packages you might install that depend on C extensions.
+- **lib/** contains the site-packages/ directory nested in a folder that designates the Python version (python3.12/). site-packages/ is one of the main reasons for creating your virtual environment. This folder is where you’ll install external packages that you want to use within your virtual environment. 
+- **pyenv.cfg** is a crucial file for your virtual environment. It contains only a couple of key-value pairs that Python uses to set variables in the sys module that determine which Python interpreter and site-packages directory the current Python session will use.
+  ```shell
+  #Contain of pyenv.cfg
+  home = /usr/local/opt/python@3.12/bin
+  include-system-site-packages = false
+  version = 3.12.11
+  executable = /usr/local/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+  command = /usr/local/opt/python@3.12/bin/python3.12 -m venv /Users/macbook/Library/CloudStorage/OneDrive-Personal/Notes/python/Projects/pythonplayground/venv
+  ```
+```shell
+$ python3 -m venv venv/ --system-site-packages
+```
+Python will set the value to include-system-site-packages in pyvenv.cfg to true. This setting means that you can use any external packages that you installed to your base Python as if you’d installed them into your virtual environment. **This connection works in only one direction.**
+
+## How can you customize a virtual environment?
+
+```shell
+$ python3 -m venv your-fancy-name/ #Command to create Virtual Environment
+$ source your-fancy-name/bin/activate
+(your-fancy-name) $
+
+# To show descriptive string without changing the name of your virtual environment's folder
+$ python3 -m venv venv/ --prompt dev-env
+$ source venv/bin/activate
+(dev-env) $
+
+# Explicitly overwrite an exisitng virtual environment using --clear
+$ python3 -m venv venv/
+$ venv/bin/pip install requests
+$ venv/bin/pip list
+Package            Version
+------------------ ---------
+certifi            2024.8.30
+charset-normalizer 3.3.2
+idna               3.8
+pip                24.2
+requests           2.32.3
+urllib3            2.2.2
+
+$ python3 -m venv venv/ --clear
+$ venv/bin/pip list
+Package    Version
+---------- -------
+pip        24.2
+
+# Create multiple virtual environments at once
+# venv/ is using relative path
+# venv-copy/ is using absolute path
+$ python3 -m venv venv/ /Users/name/virtualenvs/venv-copy/ 
+
+# Update the core dependencies
+$ python3 -m venv venv/ --upgrade-deps
+$ source venv/bin/activate
+(venv) $ python -m pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.12/site-packages (24.2)
+
+# Avoid installing pip
+$ python3 -m venv venv/ --without-pip
+$ du -hs venv/ # du:Disk Usage, -h:human readable -s:summarize
+28K venv
+
+#Include the system site-packages
+$ python3 -m venv venv/ --system-site-packages
+$ source venv/bin/activate
+(venv) $
+
+#Contain of pyenv.cfg after including site-packages
+home = /Library/Frameworks/Python.framework/Versions/3.12/bin
+include-system-site-packages = true
+...
+```
+
+## References
+* [Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/#activate-it)
+* [PEP 405- Python VIrtual Environments](https://peps.python.org/pep-0405/#specification)
+* [venv- Creation of virtual environments](https://docs.python.org/3/library/venv.html)
