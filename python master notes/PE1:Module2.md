@@ -117,6 +117,59 @@ print(value)  # Output: None (if some_condition is False)
 ```
 None is commonly used to indicate that a variable or expression has no meaningful value, is undefined, or has not been assigned yet.
 
+## Operators- data manipulation tools
+```python
+# Exponentiation
+print(2**3) # Output 8
+print(2**3.) # Output 8.0
+
+# Division
+print(6 / 3) # Output 2.0
+print(6 / 3.) # Output 2.0
+
+# Integer division (floor division)
+print(6 // 3) # Output 2
+print(6 // 3.) # Output 2.0
+print(6 // 4) # Output 1
+print(-6 // 4) # Output -2
+
+# Remainder (modulo)
+print(14 % 4) # Output 2
+print(12 % 4.5) # Output is 3
+```
+* The result produced by the division operator is always a float
+* Floor Division round up always goes to the lesser integer
+* The result of modulo operator is a remainder left after the integer division.
+### Operators bindings
+```python
+print(9 % 6 % 2)  # Output 1
+
+print(2 ** 2 ** 3) # Output 256
+
+print(-3 ** 2) # Output -9
+
+print(-(3 ** 2)) # Output -9
+
+print((-3) ** 2)  # Output 9
+
+print(2 * 3 % 5) # Output 1
+
+```
+* The binding of the operator determines the order of computations performed by some operators with equal priority, put side by side in one expression.
+* Most of Python's operators have left-sided binding, which means that the calculation of the expression is conducted from left to right.
+* from left to right: first 9 % 6 gives 3, and then 3 % 2 gives 1;
+* from right to left: first 6 % 2 gives 0, and then 9 % 0 causes a fatal error.
+* the exponentiation operator uses right-sided binding.
+* The exponentiation operator (**) has higher precedence than the unary negation operator (-)
+* Both operators (* and %) have the same priority, so the result can be guessed only when you know the binding direction
+* subexpressions in parentheses are always calculated first
+
+
+
+
+
+
+
 
 
 
