@@ -164,6 +164,61 @@ print(2 * 3 % 5) # Output 1
 * Both operators (* and %) have the same priority, so the result can be guessed only when you know the binding direction
 * subexpressions in parentheses are always calculated first
 
+## Variables
+
+### Rules
+* the name of the variable must be composed of upper-case or lower-case letters, digits, and the character _ (underscore)
+* the name of the variable must begin with a letter;
+* the underscore character is a letter;
+* upper- and lower-case letters are treated as different;
+* the name of the variable must not be any of Python's reserved words
+* No spaces
+
+The [PEP 8 -- Style Guide for Python Code](https://peps.python.org/pep-0008/) recommends the following naming convention for variables and functions in Python:
+
+*  variable names should be lowercase, with words separated by underscores to improve readability (e.g., var, my_variable)
+* function names follow the same convention as variable names (e.g., fun, my_function)
+* it's also possible to use mixed case (e.g., myVariable), but only in contexts where that's already the prevailing style, to retain backward compatibility with the adopted convention.
+
+### Reserved Keywords
+```python
+False    await    else     import   pass
+None     break    except   in       raise
+True     class    finally  is       return
+and      continue for      lambda   try
+as       def      from     nonlocal while
+assert   del      global   not      with
+async    elif     if       or       yield
+```
+
+### How to use variables
+```python
+var = "3.8.5"
+print("Python version: " + var)
+
+# output
+Python version: 3.8.5
+
+x *= 2 # x = x * 2
+sheep += 1 # sheep = sheep + 1
+i +=2 *j # i=i +2 *j
+var /= 2 # var=var/2
+rem %= 10 # rem=rem % 10
+x **= 2 # x= x ** 2
+
+
+a = 6
+b = 3
+a /= 2 * b
+print(a)
+
+# Output
+1.0 # This expression is same as a = a / (2 * b)
+```
+
+
+
+
 
 
 
