@@ -216,10 +216,32 @@ print(a)
 1.0 # This expression is same as a = a / (2 * b)
 ```
 
+## Comments
+A remark inserted into the program, which is omitted at runtime, is called a comment.
+If you'd like to quickly comment or uncomment multiple lines of code, select the line(s) you wish to modify and use the following keyboard shortcut: CTRL + / (Windows) or CMD + / (Mac OS). 
 
+## Interaction with the user
+```python
+anything=input()
+anything =input("Tell me about F1")
 
+# Typecasting
+anything = float(input("Enter a number: "))
+anything = int(input("Enter a number: "))
+```
+* The result of input() function is a string
 
+### String Operators
+```python
+name=input("Your name")
+team=input("Enter your F1 team")
+print("\n Your name is "+name+" "+" and your Team is "+team+" .")
+```
 
+### Replication
+```python
+
+```
 
 
 
