@@ -1,4 +1,4 @@
-# Python Primer
+# Python Primer - PCEP Certification Exam
 
 ## Function
 A list of all [built-in Functions](https://docs.python.org/3.12/library/functions.html)
@@ -240,8 +240,66 @@ print("\n Your name is "+name+" "+" and your Team is "+team+" .")
 
 ### Replication
 ```python
+print("Oscar" * 3)
+print(3 * "F1")
+print(5 * "2")
 
+# Output
+OscarOscarOscar
+F1F1F1
+22222
 ```
+## Logics in Python
+### Comparison: Equality Operator
+
+```python
+a==b
+2==2 # Output True
+2==2. # Output True
+
+a!=b
+2!=2 # Output False
+2!=1 # Output True
+```
+* Equality Operator is a binary operator with left-sided binding. It needs two arguments and checks if they are equal.
+
+*  The != (not equal to) operator compares the values of two operands, too. Here is the difference: if they are equal, the result of the comparison is False. If they are not equal, the result of the comparison is True.
+
+### Conditions and conditional execution
+```python
+if true_or_false_condition:
+    perform_if_condition_true
+else:
+    perform_if_condition_false
+
+# Nested if-else statements
+if the_weather_is_good:
+    if nice_restaurant_is_found:
+        have_lunch()
+    else:
+        eat_a_sandwich()
+else:
+    if tickets_are_available:
+        go_to_the_theater()
+    else:
+        go_shopping()
+
+# The elif statement
+if the_weather_is_good:
+    go_for_a_walk()
+elif tickets_are_available:
+    go_to_the_theater()
+elif table_is_available:
+    go_for_lunch()
+else:
+    play_chess_at_home()
+# Note: else is an optional part of the cascade, and may be omitted;
+
+# More Comprehensive form
+if number1 > number2: larger_number = number1
+else: larger_number = number2 
+```
+### Loops in Python
 
 
 
