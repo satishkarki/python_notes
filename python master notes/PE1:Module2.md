@@ -300,11 +300,81 @@ if number1 > number2: larger_number = number1
 else: larger_number = number2 
 ```
 ### Loops in Python
+`if` performs its statements only once; `while` repeats the execution as long as the condition evaluates to `True`.
+```python
+while conditional_expression:
+    instruction_one
+    instruction_two 
+
+# Example
+counter = 5
+while counter != 0:
+    print("Inside the loop.", counter)
+    counter -= 1
+print("Outside the loop.", counter) 
+```
+#### Looping your code with `for`
+The `for` loop is designed to do more complicated tasks – it can "browse" large collections of data item by item.
+```python
+ for i in range(100):
+    # do_something()
+    pass 
+
+# Example
+ for i in range(2, 8):
+    print("The value of i is currently", i) 
+
+# Example
+for i in range(2, 8, 3):
+    print("The value of i is currently", i)
+# Output
+The value of i is currently 2
+The value of i is currently 5 
+```
+
+#### the `break` and `continue` statements
+```python
+# break - example
+
+print("The break instruction:")
+for i in range(1, 6):
+    if i == 3:
+        break
+    print("Inside the loop.", i)
+print("Outside the loop.")
 
 
+# continue - example
+
+print("\nThe continue instruction:")
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print("Inside the loop.", i)
+print("Outside the loop.")
 
 
+# Output
+The break instruction:
 
+Inside the loop. 1
 
+Inside the loop. 2
 
+Outside the loop.
+
+The continue instruction:
+
+Inside the loop. 1
+
+Inside the loop. 2
+
+Inside the loop. 4
+
+Inside the loop. 5
+
+Outside the loop.
+```
+* `break` – exits the loop immediately, and unconditionally ends the loop's operation; the program begins to execute the nearest instruction after the loop's body;
+* `continue` – behaves as if the program has suddenly reached the end of the body; the next turn is started and the condition expression is tested immediately.
 
