@@ -378,3 +378,53 @@ Outside the loop.
 * `break` – exits the loop immediately, and unconditionally ends the loop's operation; the program begins to execute the nearest instruction after the loop's body;
 * `continue` – behaves as if the program has suddenly reached the end of the body; the next turn is started and the condition expression is tested immediately.
 
+### Logic and bit operations
+
+#### Logical Operator
+```python
+counter > 0 and value==100 # and operator
+counter > 0 or value==100 # or operator
+
+# not operator
+not (p and q) == (not p) or (not q)
+not (p or q) == (not p) and (not q) 
+```
+#### Bitwise operators
+There are four operators that allow you to manipulate single bits of data. They are called bitwise operators.
+
+    & (ampersand) ‒ bitwise conjunction;
+    | (bar) ‒ bitwise disjunction;
+    ~ (tilde) ‒ bitwise negation;
+    ^ (caret) ‒ bitwise exclusive or (xor).
+    <<(Left Shift) - Shifts all bits of a number to the left by a specified number of positions, filling the right with 0s.
+    >> (Right Shift) - Shifts all bits to the right by a specified number of positions, filling the left with the sign bit (for signed integers, typically 0 for positive numbers).
+
+* The arguements of these operators must be integers
+* the logical operators do not penetrate into the bit level of its argument. They're only interested in the final integer value.
+* Bitwise operators are stricter: they deal with every bit separately. 
+
+```python
+# Example
+i = 15 # Assume 32 bit representation 00000000000000000000000000001111 
+j= 22 # Assume 32 bit representation 00000000000000000000000000010110
+
+log= i and j # Output: True
+bit= i & j # Output: 00000000000000000000000000000110
+```
+## Lists
+Elements in a list are always numbered starting from zero.
+
+```python
+numbers = [10, 5, 7, 2, 1] 
+
+# Indexing a list
+numbers[0] = 111  
+print("New list contents: ", numbers) # Output: New list contents: [111, 5, 7, 2, 1] 
+
+# Accessing the list's first element. 
+print(numbers[0]) # output: 111
+
+# Length of list
+print("\nList length:", len(numbers)) # Output: List length: 5
+
+
