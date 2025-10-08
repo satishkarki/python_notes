@@ -427,4 +427,69 @@ print(numbers[0]) # output: 111
 # Length of list
 print("\nList length:", len(numbers)) # Output: List length: 5
 
+# Removing elements from a list
+del numbers[1]
+
+# Negative Indices are legal
+numbers = [111, 7, 2, 1]
+print(numbers[-1]) # Output: 1
+```
+Brief refresher on Method vs Function
+```python
+result = function(arg) 
+result = data.method(arg) 
+```
+A method is owned by the data it works for, while a function is owned by the whole code.
+
+```python
+list.append(value) # Add at the end of list
+list.insert(location, value) # Insert at any place in the list
+
+#Example 1
+my_list = []  # Creating an empty list.
+
+for i in range(5):
+    my_list.append(i + 1)
+
+print(my_list)
+
+# Output: [1, 2, 3, 4, 5]
+
+# Example 2
+my_list = []  # Creating an empty list.
+ 
+for i in range(5):
+    my_list.insert(0, i + 1)
+ 
+print(my_list) 
+
+# Output [5, 4, 3, 2, 1]
+```
+### Intresting use case of `for` in list
+```python
+# Conventional way
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total)
+
+# Output 27
+
+# Direct Iteration Over Elements
+ my_list = [10, 1, 8, 3, 5]
+total = 0
+ 
+for i in my_list:
+    total += i
+ 
+print(total) 
+
+# Output 27
+# The loop iterates directly over the elements of my_list (10, 1, 8, 3, 5).
+
+
+
 
