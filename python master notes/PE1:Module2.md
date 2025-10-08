@@ -489,6 +489,40 @@ print(total)
 
 # Output 27
 # The loop iterates directly over the elements of my_list (10, 1, 8, 3, 5).
+```
+### Lists in action
+```python
+variable_1 = 1
+variable_2 = 2
+ 
+auxiliary = variable_1
+variable_1 = variable_2
+variable_2 = auxiliary  
+
+# Enters Python and says -"Hold my beer!!"
+variable_1 = 1
+variable_2 = 2
+ 
+variable_1, variable_2 = variable_2, variable_1 
+
+# Example
+my_list = [10, 1, 8, 3, 5]
+ 
+my_list[0], my_list[4] = my_list[4], my_list[0]
+my_list[1], my_list[3] = my_list[3], my_list[1]
+ 
+print(my_list) 
+
+# Output [5, 3, 8, 1, 10] 
+
+# Python way
+for i in range(length // 2):
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+
+print(my_list)
+```
+
+#### Bubble sort
 
 
 
