@@ -82,6 +82,8 @@ To confirm you are in WSL environment, plese check the bottom left corner, it sh
 ```powershell
 code --remote wsl+<distro name> <path in WSL> 
 # code --remote wsl+Ubuntu /home/satish/projects
+
+# \\wsl.localhost\Ubuntu\home\butcher\repo
 ```
 
 More about [Developing in WSL](https://code.visualstudio.com/docs/remote/wsl)
